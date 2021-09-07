@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: build
-        path: ${{env.GITHUB_WORKSPACE}}/build
+        path: ${{github.workspace}}/build
 
   deploy:
     name: deploy the build artifacts to s3
@@ -39,7 +39,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: build
-        path: ${{env.GITHUB_WORKSPACE}}/build
+        path: ${{github.workspace}}/build
 
     - uses: jakejarvis/s3-sync-action@master
       with:
