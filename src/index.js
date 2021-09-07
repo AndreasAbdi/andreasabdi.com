@@ -141,10 +141,22 @@ class Game extends React.Component {
   }
   
 
+class MainPage extends React.Component {
+    render() {
+        return (
+            <div className="main-page">
+                <div classname="header">
+                    <h1> Andreas Abdi </h1>
+                </div>
+                <Game />
+            </div> 
+        );
+    }
+}
   // ========================================
   
   ReactDOM.render(
-    <Game />,
+    <MainPage />,
     document.getElementById('root')
   );
   

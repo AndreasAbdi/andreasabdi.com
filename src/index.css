@@ -1,11 +1,32 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    
+    text-transform: uppercase;
+    font-family: 'Steelfish Rg';
+    line-height: 1em;
+    letter-spacing: .04em;
+    font-size: 2.1428571429vw;
+
     margin: 20px;
-  }
+    background: #e7e6d6;
+}
   
-  ol, ul {
+ol, ul {
     padding-left: 30px;
-  }
+}
+
+
+#awwwards {
+    top: 100vh;
+    transform: translateY(-140%);
+}
+
+/* ------------------------------------------------------------ *\
+	Header
+\* ------------------------------------------------------------ */
+.header { border: 9px solid #e7e6d6; border-bottom: 0; position: absolute; left: -9px; top: -9px; right: -9px; z-index: 999; }
+.header .logo { display: inline-block; width: 106px; height: 106px; position: fixed; left: 9px; top: 0; overflow: hidden; opacity: 1; transition: opacity .4s ease; }
+.header .logo svg { width: 133px; max-width: none; height: 134px; position: absolute; right: 0; bottom: 0; }
+
   
   .board-row:after {
     clear: both;
