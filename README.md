@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+[![Node.js CI](https://github.com/AndreasAbdi/andreasabdi.com/actions/workflows/node.js.yml/badge.svg)](https://github.com/AndreasAbdi/andreasabdi.com/actions/workflows/node.js.yml)
+
+# AndreasAbdi
+
+test website, messing around with stuff.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
