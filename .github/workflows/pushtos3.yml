@@ -30,6 +30,8 @@ jobs:
         path: build
 
   deploy:
+    name: deploy the build artifacts to s3
+    needs: build
     runs-on: ubuntu-latest
     steps:
     
