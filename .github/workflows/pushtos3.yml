@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: build
-        path: build
+        path: ${{GITHUB_WORKSPACE}}/build
 
   deploy:
     name: deploy the build artifacts to s3
@@ -39,7 +39,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: build
-        path: /home/runner/build
+        path: ${{GITHUB_WORKSPACE}}/build
 
     - uses: jakejarvis/s3-sync-action@master
       with:
@@ -49,4 +49,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-west-2'
-        SOURCE_DIR: '/home/runner/build'      # optional: defaults to entire repository
+        SOURCE_DIR: 'build'      # pulls objects in GITHUB_WORKSPACE/build
