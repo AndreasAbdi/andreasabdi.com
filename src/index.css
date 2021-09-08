@@ -27,6 +27,15 @@ ol, ul {
 .header .logo { display: inline-block; width: 106px; height: 106px; position: fixed; left: 9px; top: 0; overflow: hidden; opacity: 1; transition: opacity .4s ease; }
 .header .logo svg { width: 133px; max-width: none; height: 134px; position: absolute; right: 0; bottom: 0; }
 
+.andreas-symbol {
+    display: inline-block;
+    font-size: 4vw;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: clip;
+    text-overflow: clip;
+}
   
   .board-row:after {
     clear: both;
