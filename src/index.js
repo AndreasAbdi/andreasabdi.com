@@ -156,8 +156,8 @@ class MainPage extends React.Component {
 
         return (
             <div className="main-page">
-                <AndreasSymbol />
                 {symbols}
+                <Game />
             </div> 
         );
     }
