@@ -7,7 +7,6 @@ const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
 
   const handleClick = async (e) => {
     const code = e.keyCode || e.which;
-
     if (code === 13) {
       console.log(message);
       updateSystemOnUserMessageSubmit(message);
@@ -18,23 +17,25 @@ const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
 
 
   return (
-      <div className="chat">
+    <div className="chat">
         <h1> Bob</h1>
         <div className="historyContainer">
           {chat.length === 0
             ? ""
             : chat.map((msg) => <div className={msg.type}>{msg.message}</div>)}
         </div>
-        <input
-            className="pantera"
-            id="chatBox"
-            placeholder='Hello there! I am Bob and I work on your house. Ask me anything!'
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyPress={handleClick}
-            value={message}>
-
-          </input>
-      </div> 
+        <div>
+            <body>Input: </body>
+            <input
+                className="pantera"
+                id="chatBox"
+                placeholder='Hello there! I am Bob. Please ask me anything!'
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyPress={handleClick}
+                value={message}>
+            </input>
+        </div>
+    </div> 
   );
   
 }

@@ -4,12 +4,15 @@ import './index.css';
 import store from './store';
 import { Provider } from "react-redux"
 import Chat from './components/chat';
+import Header from './components/header';
+import BodyContainer from './components/object-container';
 
 const App = () => {
   return (
     <Provider store = {store}>
         <div className="container">
-          <Chat />
+          <Header />
+          <BodyContainer />
         </div>
     </Provider>
   )

@@ -13,7 +13,11 @@ export const userMessage = (message) => async (dispatch) => {
 // send message to the bot, to get a response back.
 export const sendMessage = (message) => async (dispatch) => {
     try {
-        const body = { user_input: message };
+        const token = sessionStorage.getItem('LWA_DAAPI_TOKEN')
+        if (token == null) {
+            throw new Error('you need to log in first!')
+        }
+        const body = { user_input: message, daapi_token: token };
         // TODO: add the daapi_tokenization for LWA invocations.
         //const res = 'bot received message' + message;
         const res = await axios.post("https://ai.andreasabdi.com/v1/ai_completions", body);
