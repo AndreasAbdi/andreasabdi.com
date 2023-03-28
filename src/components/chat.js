@@ -24,8 +24,8 @@ const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
             ? ""
             : chat.map((msg) => <div className={msg.type}>{msg.message}</div>)}
         </div>
-        <div>
-            <body>Input: </body>
+        <div className="chatContainer">
+            <h4>Input: </h4>
             <input
                 className="pantera"
                 id="chatBox"

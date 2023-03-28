@@ -103,7 +103,8 @@ html, body, #root, #app>div {
 .chat {
   /* Chat box */
   text-align: center;
-
+  display: flex;
+  flex-direction: column;
   flex-grow: 4;
   background: #000000;
   border: 3px dashed #FFA724;
@@ -114,17 +115,24 @@ html, body, #root, #app>div {
 .container {
   display: flex;
   flex-direction: column;
+  height: inherit;
 }
+
 .historyContainer{
+  flex-grow: 10;
   height:600px;
 }
 
+.chatContainer {
+  flex-grow: 1;
+  height: fit-content;
+}
 #chatBox {
     /* Auto layout */
     margin: 5px 10px 10px 5px;
     padding: 5px 10px;
-    gap: 10px;
-    
+
+    flex-grow: 2;
     width: 80%;
     border: 1px dashed #FFA724;
     background: #FFA724;
@@ -141,6 +149,8 @@ html, body, #root, #app>div {
 .bodyContainer {
   display: flex;
   flex-direction: row;
+  height: inherit;
+
 }
 
 .sideBar {
