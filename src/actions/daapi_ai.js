@@ -15,7 +15,11 @@ export const sendMessage = (message) => async (dispatch) => {
     try {
         const token = sessionStorage.getItem('LWA_DAAPI_TOKEN')
         if (token == null) {
-            throw new Error('you need to log in first!')
+            dispatch({
+                type: AI_SUCCESS,
+                payload: 'you need to log in first! This will not work otherwise.'
+            })
+            return;
         }
         const body = { user_input: message, daapi_token: token };
         //const res = 'bot received message' + message;
@@ -39,7 +43,7 @@ export const sendAudio = (audio) => async (dispatch) => {
             headers: {'content-type': 'multipart/form-data'}
         }
         const res = await axios.post(
-            "http://localhost:7777/v1/audio_input", 
+            "http://localhost:80/v1/audio_input", 
             formData, 
             config);
         console.log("finished sending")
