@@ -43,7 +43,7 @@ export const sendAudio = (audio) => async (dispatch) => {
             headers: {'content-type': 'multipart/form-data'}
         }
         const res = await axios.post(
-            "http://localhost:80/v1/audio_input", 
+            "https://ai.andreasabdi.com/v1/audio_input", 
             formData, 
             config);
         console.log("finished sending")
