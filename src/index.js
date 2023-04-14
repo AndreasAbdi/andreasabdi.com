@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import store from './store';
 import { Provider } from "react-redux"
-import Chat from './components/chat';
+
+import SideBar from './components/side_bar';
 import Header from './components/header';
 import BodyContainer from './components/object-container';
 
@@ -13,6 +14,7 @@ const App = () => {
         <div className="container">
           <Header />
           <BodyContainer />
+          <SideBar />
         </div>
     </Provider>
   )

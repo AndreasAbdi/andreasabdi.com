@@ -7,7 +7,6 @@ const BodyContainer = () => {
     return (
       <div className="bodyContainer">
           <Chat />
-          <SideBar />
       </div> 
     );
     

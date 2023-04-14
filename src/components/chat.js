@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux"
 import { sendMessage as sendMessageToBot, userMessage as updateSystemOnUserMessageSubmit } from '../actions/daapi_ai';
+import AudioRecorder from './audio-recorder';
+
 
 const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
   const [message, setMessage] = useState("");
@@ -15,25 +17,26 @@ const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
     }
   };
 
-
   return (
     <div className="chat">
-        <h1> Bob</h1>
+        <h1>Jessie</h1>
         <div className="historyContainer">
           {chat.length === 0
             ? ""
             : chat.map((msg) => <div className={msg.type}>{msg.message}</div>)}
         </div>
         <div className="chatContainer">
-            <h4>Input: </h4>
+            
             <input
-                className="pantera"
+                className="chatInput"
                 id="chatBox"
-                placeholder='Hello there! I am Bob. Please ask me anything!'
+                placeholder='Write a message..'
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleClick}
                 value={message}>
             </input>
+            <AudioRecorder />
+
         </div>
     </div> 
   );

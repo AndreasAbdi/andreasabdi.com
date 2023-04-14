@@ -2,8 +2,8 @@ const Header = ({}) => {
 
     return (
       <div className="header">
-        <h1>Header</h1>
-        <div>
+        <div className="header-logo"><h1>Legendary Chainsaw</h1></div>
+        <div className="menu-buttons">
             <button className="pantera" id="loginWithAmazon">login</button>
         </div>
       </div> 

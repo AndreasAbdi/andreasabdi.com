@@ -18,7 +18,6 @@ export const sendMessage = (message) => async (dispatch) => {
             throw new Error('you need to log in first!')
         }
         const body = { user_input: message, daapi_token: token };
-        // TODO: add the daapi_tokenization for LWA invocations.
         //const res = 'bot received message' + message;
         const res = await axios.post("https://ai.andreasabdi.com/v1/ai_completions", body);
         dispatch({
@@ -30,3 +29,40 @@ export const sendMessage = (message) => async (dispatch) => {
         throw err
     }
 };
+
+export const sendAudio = (audio) => async (dispatch) => {
+    try {
+        console.log("start sending")
+        const formData = new FormData();
+        formData.append("file", audio)
+        const config = {
+            headers: {'content-type': 'multipart/form-data'}
+        }
+        const res = await axios.post(
+            "http://localhost:7777/v1/audio_input", 
+            formData, 
+            config);
+        console.log("finished sending")
+
+        console.log(res.data)
+        const sound = new Audio("data:audio/wav;base64," + res.data.audio_stream)
+        sound.play();
+        // Use this if API is sending direct audio_stream.
+        // const audioBlob = new Blob([res.data], { type: 'audio/wav' });
+        // const audioUrl = URL.createObjectURL(audioBlob);
+        // const audioPlayer = new Audio(audioUrl)
+        // audioPlayer.play();
+
+        dispatch({
+            type: INPUT_SUCCESS,
+            payload: res.data.input,
+        });
+        dispatch({
+            type: AI_SUCCESS,
+            payload: res.data.response,
+        });
+
+    } catch (err) {
+        throw err
+    }
+}

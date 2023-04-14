@@ -25,6 +25,24 @@ ol, ul {
     transform: translateY(-140%);
 }
 
+.historyContainer::-webkit-scrollbar {
+  width: 12px;
+  scroll-margin-right: 10px;
+}
+
+.historyContainer::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: 1.5px solid #C6C8CA;
+  border-radius: 3px;
+  scroll-margin-right: 10px;
+}
+
+.historyContainer::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: 2px solid #C6C8CA;
+  border-radius: 3px;
+}
+
 /* ------------------------------------------------------------ *\
 	Header
 \* ------------------------------------------------------------ */
@@ -35,9 +53,22 @@ ol, ul {
   top: -9px; 
   right: -9px; 
   z-index: 999; 
+  display: flex;
+  flex-direction: row;
 }
+
 .header .logo { display: inline-block; width: 106px; height: 106px; position: fixed; left: 9px; top: 0; overflow: hidden; opacity: 1; transition: opacity .4s ease; }
 .header .logo svg { width: 133px; max-width: none; height: 134px; position: absolute; right: 0; bottom: 0; }
+
+.header-logo {
+  flex-grow: 1;
+}
+.menu-buttons {
+  display: flex;
+  flex-grow: 5;
+  align-items: flex-end;
+  flex-direction: column;
+}
 
 /* GAMES */
 .andreas-symbol {
@@ -107,9 +138,9 @@ html, body, #root, #app>div {
   flex-direction: column;
   flex-grow: 4;
   background: #000000;
-  border: 3px dashed #FFA724;
+  border: 1px solid #FFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
 .container {
@@ -121,28 +152,202 @@ html, body, #root, #app>div {
 .historyContainer{
   flex-grow: 10;
   height:600px;
+  overflow-y: auto;
+  margin-right: 10px;
+  flex-direction: column-reverse;
 }
 
+.audioRecorder {
+  border: 20px;
+  margin: 10px 20px 10px 10px;
+
+}
 .chatContainer {
+  
   flex-grow: 1;
   height: fit-content;
+  display: flex;
 }
+
+.record {
+  margin: auto;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+
+  width: fit-content;
+  height: 50px;
+}
+
+button {
+    /* TextFrame */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 7px 30px;
+  
+    width: 143px;
+    height: 50px;
+  
+    /* Primaries/Primary Text */
+  
+    background: #FFFFFF;
+    border: 1px solid #C6C8CA;
+    /* Buttons/ButtonPopping */
+  
+    box-shadow: 3px 3px 0px 4px rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+  
+    /* Inside auto layout */
+  
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+button {
+  /* Primary Text/Heading 4 */
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+
+  /* identical to box height, or 36px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Primary BG */
+
+  color: #000000;
+}
+
+.button-textbox {
+  /* TextFrame */
+
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 7px 30px;
+
+  width: fit-content;
+  height: 50px;
+
+  /* Primaries/Primary Text */
+
+  background: #FFFFFF;
+  border: 1px solid #C6C8CA;
+  /* Buttons/ButtonPopping */
+
+  box-shadow: 3px 3px 0px 4px rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.button-textbox:active {
+  /* TextFrame */
+
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 7px 30px;
+
+  width: fit-content;
+  height: 50px;
+
+  /* Primaries/Primary Text */
+
+  background: #FFFFFF;
+  /* Buttons/ButtonPressed
+
+  Makes it look like you pressed in
+  */
+  box-shadow: inset 2px 3px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 3px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.button-textbox h2 {
+  /* Button */
+
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+  /* Primary Text/Heading 4 */
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Primary BG */
+
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
 #chatBox {
     /* Auto layout */
-    margin: 5px 10px 10px 5px;
+    margin: 5px 10px 10px 20px;
     padding: 5px 10px;
 
     flex-grow: 2;
     width: 80%;
-    border: 1px dashed #FFA724;
-    background: #FFA724;
+    color: #fff;
+    background: #000000;
+    border-radius: 3px;
 
 }
 
 #chatBox::placeholder {
   font-weight: bold;
   opacity: 0.9;
-  color: #000000;
+  color: #A3A8AD;
 }
 
 
@@ -156,9 +361,8 @@ html, body, #root, #app>div {
 .sideBar {
   background-color: #000000;
   padding: 5px;
-  width: 200px;
-
 }
+
 .USER {
   /* Chat entry */
   box-sizing: border-box;
@@ -174,7 +378,8 @@ html, body, #root, #app>div {
   padding: 5px 10px;
   gap: 10px;
 
-  border: 1px dashed #FFA724;
+  border: 1px dashed #A3A8AD;
+  border-radius: 3px;
 
   /* Inside auto layout */
 
@@ -192,7 +397,8 @@ html, body, #root, #app>div {
   padding: 5px 10px;
   gap: 10px;
 
-  border: 1px dashed #FFA724;
+  border: 1px dashed #A3A8AD;
+  border-radius: 3px;
 
   /* Inside auto layout */
 
