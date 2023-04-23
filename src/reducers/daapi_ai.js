@@ -1,4 +1,4 @@
-import { INPUT_SUCCESS, AI_SUCCESS } from "../actions/action_types";
+import { INPUT_SUCCESS, AI_SUCCESS, CODE_SUCCESS } from "../actions/action_types";
 // Initial state
 const initialState = {
     messages: [],
@@ -18,6 +18,12 @@ const daapiAi = (state = initialState, action) => {
             }
         case AI_SUCCESS:
             messages = [...messages, { message: payload, type: "AI"}]
+            return {
+                ...state,
+                messages
+            }
+        case CODE_SUCCESS:
+            messages = [...messages, { message: payload, type: "CODE"}]
             return {
                 ...state,
                 messages

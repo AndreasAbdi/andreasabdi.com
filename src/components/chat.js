@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { connect } from "react-redux"
 import { sendMessage as sendMessageToBot, userMessage as updateSystemOnUserMessageSubmit } from '../actions/daapi_ai';
 import AudioRecorder from './audio-recorder';
+import Prism from "prismjs";
 
+import { useEffect } from 'react';
 
 const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
   const [message, setMessage] = useState("");
@@ -16,14 +18,25 @@ const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
       setMessage("");
     }
   };
-
+  
+  useEffect(() => {
+    Prism.highlightAll();
+  })
+  
   return (
     <div className="chat">
         <h1>Jessie</h1>
         <div className="historyContainer">
           {chat.length === 0
             ? ""
-            : chat.map((msg) => <div className={msg.type}>{msg.message}</div>)}
+            : chat.map((msg) => {
+              if (msg.type === "CODE") {
+                return <div className="Code"><pre><code className='language-python'>{msg.message}</code></pre></div>
+              } else {
+                return <div className={msg.type}>{msg.message}</div>
+              }
+            })
+          }
         </div>
         <div className="chatContainer">
             

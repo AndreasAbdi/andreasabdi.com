@@ -388,6 +388,23 @@ button {
   flex-grow: 0;
 }
 
+.CODE {
+  /* Chat entry */
+
+  box-sizing: border-box;
+
+  text-align: right;
+  border: 1px dashed #A3A8AD;
+  border-radius: 3px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
 .AI {
   /* Chat entry */
   box-sizing: border-box;
