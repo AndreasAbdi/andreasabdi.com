@@ -1,8 +1,8 @@
 import { INPUT_SUCCESS, AI_SUCCESS, CODE_SUCCESS } from "./action_types";
 import axios from "axios";
 
-var andreas_abdi_site = "http://localhost:80"
-//var andreas_abdi_site = "https://ai.andreasabdi.com"
+//var andreas_abdi_site = "http://localhost:80"
+var andreas_abdi_site = "https://ai.andreasabdi.com"
 
 // On consumption of a user's request.
 export const userMessage = (message) => async (dispatch) => {
