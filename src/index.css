@@ -416,7 +416,7 @@ button {
   flex-grow: 0;
 }
 
-.CODE {
+.Code {
   /* Chat entry */
 
   box-sizing: border-box;
@@ -470,7 +470,7 @@ button {
 
 @media screen and (max-width: 720px) {
 
-  .CODE {
+  .Code {
     display: none;
   }
 
