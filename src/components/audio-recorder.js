@@ -19,7 +19,9 @@ const AudioRecorder = ({chat, sendAudio}) => {
         <div className="audioRecorder">
             <button className="record"
                 onMouseDown={startRecording}
-                onMouseUp={stopRecording}>
+                onMouseUp={stopRecording}
+                onTouchStart={startRecording}
+                onTouchEnd={stopRecording}>
                 <div class="button-textbox">
                     <h2>VOICE</h2>
                 </div>

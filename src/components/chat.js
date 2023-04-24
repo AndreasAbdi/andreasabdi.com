@@ -18,7 +18,8 @@ const Chat = ({ chat, updateSystemOnUserMessageSubmit, sendMessageToBot }) => {
       setMessage("");
     }
   };
-  
+
+
   useEffect(() => {
     Prism.highlightAll();
   })
