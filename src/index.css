@@ -151,7 +151,7 @@ html, body, #root, #app>div {
 
 .historyContainer{
   flex-grow: 10;
-  height:600px;
+  height: 80%;
   overflow-y: auto;
   margin-right: 10px;
   flex-direction: column-reverse;
@@ -162,11 +162,45 @@ html, body, #root, #app>div {
   margin: 10px 20px 10px 10px;
 
 }
-.chatContainer {
+
+@media screen and (max-width: 720px) {
+
+  .CODE {
+    display: none;
+  }
+
+  .sideBar {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .chatInput {
+    height: 100px;
   
-  flex-grow: 1;
-  height: fit-content;
-  display: flex;
+    min-height: 100px;
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  .chatContainer {
+  
+    flex-grow: 1;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+
+@media screen and (width > 480px) {
+  .chatContainer {
+  
+    flex-grow: 1;
+    height: fit-content;
+    display: flex;
+  }
+  
 }
 
 .record {
@@ -181,8 +215,8 @@ html, body, #root, #app>div {
   gap: 10px;
 
   width: fit-content;
-  height: 50px;
 }
+
 
 button {
     /* TextFrame */
@@ -266,7 +300,10 @@ button {
   flex: none;
   order: 0;
   flex-grow: 0;
+
+  user-select: none;
 }
+
 
 .button-textbox:active {
   /* TextFrame */
@@ -424,3 +461,17 @@ button {
   flex-grow: 0;
 }
 
+@media screen and (max-width: 480px) {
+  .record{
+    height: 100px;
+  }
+
+  .button-textbox {
+    height: 100px;
+  }
+
+  .button-textbox > h2 {
+    height: 100%;
+  }
+  
+}
